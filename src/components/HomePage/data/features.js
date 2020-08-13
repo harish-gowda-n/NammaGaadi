@@ -7,7 +7,7 @@ let features = [{
 },
 {
   "key": 2,
-  "featHead": "Quick & Easy Portal",
+  "featHead": "Quick & Easy",
   "featDesc": "Hiring a truck is now just a click away, through our hassle free online booking system."
 },
 {

@@ -1,0 +1,86 @@
+html {
+  scroll-behavior: smooth;
+  /* background-color: #eef9bf; */
+}
+
+body{
+  width: 100%;
+}
+
+.App {
+  justify-content: center;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: #207561;
+  /* background-color: #E7F0C3; */
+}
+
+@media only screen and (max-width: 800px) {
+  .book-now{
+    width: 80%;
+    position: absolute;
+    top: 10rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  h1{
+    font-size: 7vw;
+  }
+
+  #datepicker{
+    width: 150px;
+  }
+
+  .inputSize{
+    font-size: 3.4vw;
+  }
+}
+
+@media only screen and (min-width: 801px){
+  .book-now{
+    position: absolute;
+    right: 10rem;
+    top: 10rem;
+    min-width: 22rem;
+  }
+}
+
+.book-now {
+  border: darkseagreen;
+  border-width: thick;
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(208, 239, 132, 0.5);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #207561;
+  font-family: 'Suez One', serif;
+}
+
+hr{
+  margin: 6rem auto ;
+  border-top-style: dashed;
+  border-width: 4px;
+  width: 60%;
+}
+
+input,
+select {
+  margin: 20px auto;
+}
+
+p{
+  text-align: center;
+}
+
+.copyrights {
+  color: #207561;
+  font-size: 1rem;
+  margin-top: 2vw;
+}
+
+ .footer-link {
+  color: #207561;
+}

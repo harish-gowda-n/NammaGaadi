@@ -1,0 +1,38 @@
+
+@media only screen and (max-width: 800px) {
+    .tabTitles{
+        font-size: 3vw;
+    }
+    h6{
+        font-size: 2.8vw;
+    }
+    .mapsContainer{
+        margin-top: 20px;
+    }
+    .mainDiv{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 801px) {
+    .tabTitles{
+        font-size: 1.8vw;
+    }
+    .mainDiv{
+        width: 80%;
+    }
+}
+
+.mainDiv{
+    min-height: 400px;
+}
+
+.tabTitles{
+    padding: 2px 0.8rem;
+
+}
+
+.mainDiv a{
+    padding: 8px 8px
+}
+

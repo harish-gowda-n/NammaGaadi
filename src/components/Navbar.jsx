@@ -8,31 +8,29 @@ export default function NavbarElement() {
       expand="lg"
       variant="light"
       sticky="top"
-      style={{ backgroundColor: "#d0ef84", position: "fixed", top: "0", width: "100%" }}>
-      <Navbar.Brand href="#home">
+      //D1EAA3
+      style={{ backgroundColor: "#A0CC78", width: "100%", alignItems: "center" }}>
+      <Navbar.Brand href="/">
         <img
           alt=""
-          src="https://picsum.photos/200"
-          width="30px"
-          height="30px"
+          src="./Logo.png"
+          width="auto"
+          height="35px"
           className="d-inline-block align-top"
         />
-        <span style={{ color: "#207561", marginLeft: "20px" }}>Namma Gaadi</span>
+        <span style={{ color: "#207561", margin: "auto 0 auto 20px" }}>Namma Gaadi</span>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse
         id="responsive-navbar-nav"
         className="justify-content-end"
       >
-        <Nav style={{ color: "#207561" }}>
-          <Nav.Link href="#login">About Us</Nav.Link>
-          <Nav.Link
-            href="#login"
-            style={{ marginRight: "40px", marginLeft: "40px" }}
-          >
+        <Nav>
+          <Nav.Link href="/#aboutUs" style={{ color: "#207561", marginRight: "40px" }}>About Us</Nav.Link>
+          <Nav.Link href="/#contactUs" style={{ marginRight: "40px", color: "#207561" }}>
             Contact us
           </Nav.Link>
-          <Nav.Link href="#login">Book now</Nav.Link>
+          <Nav.Link href="/#bookNow" style={{ color: "#207561" }}>Book now</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

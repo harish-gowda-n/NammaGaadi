@@ -1,0 +1,51 @@
+body{
+    font-family: montserrat;
+    background: white;
+}
+h4{
+    font-size: 3em;
+}
+#submitBtn, .form-control{
+    border-radius: 30px; 
+    margin: auto;
+}
+
+img{
+    margin: auto;
+}
+
+.form-control{
+    height: 46px;
+    padding-left: 24px;
+}
+.jumbotron{
+    background: white;
+    margin: auto;
+}
+.btn-outline-danger{
+    width: 100px;
+    height: 60px;
+}
+
+.btn-success{
+    width: 150px;
+    height: 60px;
+    border: 3px white solid;
+}
+.btn-success:hover{
+    border: 3px green solid;
+}
+
+#nextIcon{
+    margin: auto 15px;
+}
+
+.jumbotron{
+    padding: 2%;
+}
+
+#mapStuff{
+    background-color: gray;
+    width: fit-content;
+    height: fit-content;
+}
