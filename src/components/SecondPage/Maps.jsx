@@ -7,7 +7,8 @@ import {
 } from "react-google-maps";
 import Geocode from "react-geocode";
 import AutoComplete from "react-google-autocomplete";
-Geocode.setApiKey("AIzaSyDIATTz7w5lKJYfjR5XssI2-AsPxwgqxQw");
+require('dotenv').config();
+Geocode.setApiKey(process.env.REACT_APP_geocodeAPIKey);
 
 var getDistanceBetweenPoints = require("get-distance-between-points");
 
@@ -207,7 +208,7 @@ class Maps extends React.Component {
 
     return (
       <MapWithAMarker
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIATTz7w5lKJYfjR5XssI2-AsPxwgqxQw&v=3.exp&libraries=geometry,drawing,places"
+        googleMapURL={"https://maps.googleapis.com/maps/api/js?key="+process.env.REACT_APP_geocodeAPIKey+"&v=3.exp&libraries=geometry,drawing,places"}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `400px` }} />}
         mapElement={<div style={{ height: `100%` }} />}

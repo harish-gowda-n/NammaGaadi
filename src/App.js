@@ -16,8 +16,8 @@ export default function App() {
       <Router>
       <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/order" component={SecondPage} />
-          <Route path="/paymentsuccess" component={SuccessPage} />
+          <Route exact path="/order" component={SecondPage} />
+          <Route exact path="/paymentsuccess" component={SuccessPage} />
         </Switch>
         </Router>
       <Footer />

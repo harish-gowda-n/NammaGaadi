@@ -6,18 +6,16 @@ const fast2sms = require('fast-two-sms');
 const Razorpay = require('razorpay')
 const shortid = require('shortid')
 const firebase = require('./firebase/firebase')
-const cors = require('cors')
+require('dotenv').config()
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json()); 
-app.use(express.urlencoded());
-app.use(cors());
 var nodemailer = require("nodemailer");
 
 const razorpay = new Razorpay({
-	key_id: 'rzp_test_L1pHR7BSFCwGjk',
-	key_secret: 'rd9RZb1WngheaQKOZxsBeKeb'
+	key_id: process.env.REACT_APP_RazorPayKeyID,
+	key_secret: process.env.REACT_APP_RazorPayKeySecret
 })
 
 app.use(express.static(path.join(__dirname, 'build')));
@@ -27,7 +25,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
-// Second Page
+//Second Page
 app.get("/order", (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
@@ -71,8 +69,9 @@ app.post("/sendMail", (req, res) => {
 
 //Send OTP
 app.post('/sendotp', async (req, res) => {
+    console.log(process.env.REACT_APP_Fast2SMS)
     const response = await fast2sms.sendMessage({
-      authorization: '6t2AAuXknhywVmZFBrton62STv1N6BECwg3rYIbsSEtWXfxpuTYeXULeeYp6',
+      authorization: process.env.REACT_APP_Fast2SMS,
       message: `Dear Customer, your otp for Namma Gaadi is : ${req.body.otp}`,
       numbers: [req.body.phone],
     });
@@ -108,7 +107,7 @@ app.post('/sendotp', async (req, res) => {
 //Send Razorpay Verification
 app.post('/verification', (req, res) => {
 	// do a validation
-	const secret = 'PaYmEnT1!SuCcEsSfUl'
+	const secret = process.env.REACT_APP_verification_RazorPayKeySecret
 
 	const crypto = require('crypto')
 
@@ -127,14 +126,12 @@ app.post('/verification', (req, res) => {
 })
 
 // Firebase write
-app.post('/firebase', (req, res) => {
+app.post('/firebase', async (req, res) => {
     const db_data = req.body.db_data
-    firebase.write(db_data);
-    res.send("uploaded successfully")
+    firebase.write(db_data, res);    
 })
 
 app.get('/paymentsuccess', (req, res) => {
-    console.log("hit")
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 

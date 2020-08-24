@@ -8,6 +8,7 @@ import displayRazorpay from "../src/components/SecondPage/razorpay"
 import calculations from './calculations'
 import axios from 'axios'
 import getMinDate from "./components/getMinDate"
+require("dotenv").config()
 
 export default function SecondPage(homeprops) {
 
@@ -129,7 +130,7 @@ export default function SecondPage(homeprops) {
         }
         !state.checked
           ? alert("Please agree to the terms and conditions!")
-          : displayRazorpay(db_data, calculations(distance, state.vehicle))
+          : displayRazorpay(db_data, calculations(distance, state.vehicle), homeprops)
         break;
     }
   }

@@ -14,7 +14,7 @@ function loadScript(src) {
     })
   }
 
-export default async ( db_data, price ) => {
+export default async ( db_data, price, props ) => {
     const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
   
       if (!res) {
@@ -45,17 +45,15 @@ export default async ( db_data, price ) => {
             data: {
                 db_data
             }
+        }).then(res => {
+          console.log(res.status)
+          if (res.status == 200){
+            props.history.push("/paymentsuccess")
+          }
         })
-        .then(res => {
-          if(res.data === "uploaded successfully"){
-            axios({
-              method: "get",
-              url: "/paymentsuccess",
-          })}
-        })}
+      }
       }
       const paymentObject = new window.Razorpay(options)
       paymentObject.open()
-
 }
 
