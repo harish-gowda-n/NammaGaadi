@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { Accordion, Button, Form, useAccordionToggle, Toast, } from "react-bootstrap"
 import axios from "axios"
@@ -14,11 +15,26 @@ export default function Contact(props) {
 
     function CustomToggle({ children, eventKey }) {
         const decoratedOnClick = useAccordionToggle(eventKey);
+=======
+import React from "react";
+import { Accordion, Button, Form, useAccordionToggle } from "react-bootstrap"
+
+export default function Contact() {
+
+    function CustomToggle({ children, eventKey }) {
+        const decoratedOnClick = useAccordionToggle(eventKey, () =>
+            console.log('Toggled'),
+        );
+>>>>>>> 0043c2635bbaf8b2a7826539cc9492064447d222
 
         return (
             <Button
                 type="button"
+<<<<<<< HEAD
                 variant="success"
+=======
+                variant="primary"
+>>>>>>> 0043c2635bbaf8b2a7826539cc9492064447d222
                 onClick={decoratedOnClick}
             >
                 {children}
@@ -26,6 +42,7 @@ export default function Contact(props) {
         );
     }
 
+<<<<<<< HEAD
     function handleChange(event) {
         const name = event.target.name;
         const value = event.target.value;
@@ -95,3 +112,21 @@ export default function Contact(props) {
     }
 }
 
+=======
+    return (
+        <div style={{ textAlign: "center" }}>
+            <Accordion style={{ width: "70%", margin: "auto" }}>
+                <CustomToggle eventKey="0">Contact Us</CustomToggle>
+                <Accordion.Collapse eventKey="0">
+                    <Form>
+                        <Form.Control type="name" placeholder="Enter your name" /><br />
+                        <Form.Control as="textarea" rows="5" placeholder="Enter your message" />
+                        <br /> <br />
+                        <Button type="submit">Send <i className="fas fa-paper-plane" /></Button>
+                    </Form>
+                </Accordion.Collapse>
+            </Accordion>
+        </div>
+    );
+} 
+>>>>>>> 0043c2635bbaf8b2a7826539cc9492064447d222
