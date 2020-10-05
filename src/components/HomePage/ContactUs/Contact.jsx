@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Accordion, Button, Form, useAccordionToggle, Toast, ProgressBar } from "react-bootstrap"
+import { Accordion, Button, Form, useAccordionToggle, Toast, } from "react-bootstrap"
 import axios from "axios"
 import CircularProgress from '@material-ui/core/CircularProgress'
 
@@ -44,11 +44,12 @@ export default function Contact(props) {
             }
         }).then((response) => {
             if (response.data.msg === 'success') {
-                setState({ email: "", msg: "" })
+                // setState({ email: "", msg: "" })
                 setShow(true)
                 setProgress(false)
             } else if (response.data.msg === 'fail') {
                 alert("Oops, something went wrong. Try again")
+                setProgress(false)
             }
         })
         

@@ -37,7 +37,6 @@ class Maps extends React.Component {
   geoCoding(lat, long, type) {
 
     Geocode.fromLatLng(lat, long).then((response) => {
-      const address = response.results[0].formatted_address
       const addressArray = response.results[0].address_components
 
       if (type === 'pickup') {

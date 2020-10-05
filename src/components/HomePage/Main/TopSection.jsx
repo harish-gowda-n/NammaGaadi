@@ -12,8 +12,6 @@ function TopSection() {
     vehicleType: ""
   });
 
-  const capacity = state.capacity;
-
   const handleChange = (event) => {
     var name = event.target.name;
     var value = event.target.value;

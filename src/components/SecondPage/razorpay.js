@@ -47,7 +47,7 @@ export default async ( db_data, price, props ) => {
             }
         }).then(res => {
           console.log(res.status)
-          if (res.status == 200){
+          if (res.status === 200){
             props.history.push("/paymentsuccess")
           }
         })

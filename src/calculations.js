@@ -43,7 +43,6 @@ export default (distance, vehicle) => {
                 total_cost = distance * 175;
         } break
         default: {
-            
         }
     }
     total_cost += (total_cost * 10) / 100

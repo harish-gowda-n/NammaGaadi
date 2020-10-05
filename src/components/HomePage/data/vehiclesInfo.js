@@ -1,28 +1,28 @@
 const vehiclesInfo = [
   {
     key: 1,
-    img: "https://drive.google.com/thumbnail?id=1JMQZwW2fJoUGZyu8oqrZVJaOeRMniRch",
+    img: require("./images/ape.png"),
     name: "Ape Piaggio",
     capacity: "500 kg",
     price: "₹ 125"
   },
   {
     key: 2,
-    img: "https://drive.google.com/thumbnail?id=1G15tjs-gEihIVsg2VpWGLqyBcHfHhICM",
+    img: require("./images/ace.png"),
     name: "Tata Ace",
     capacity: "750 kg",
     price: "₹ 180"
   },
   {
     key: 3,
-    img: "https://drive.google.com/thumbnail?id=1QVfwdpo5dx7nbb2JmnuPPc7g0IEhDyvl",
+    img: require("./images/407.png"),
     name: "Tata 407",
     capacity: "2500 kg",
     price: "₹ 280"
   },
   {
     key: 4,
-    img: "https://drive.google.com/thumbnail?id=1VHeUMZAa1gaAVfrlOY_iFDDdjJUG4HQg",
+    img: require("./images/canter.png"),
     name: "Eicher Canter",
     capacity: "1000 kg",
     price: "₹ 220"

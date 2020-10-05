@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Table, Card, Button, Form } from "react-bootstrap";
+import { Col, Table, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function VehicleInfo(props) {

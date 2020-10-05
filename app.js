@@ -38,8 +38,8 @@ app.post("/sendMail", (req, res) => {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'embarkventures04@gmail.com',
-            pass: 'embark@004'
+            user: 'gaadinamma@gmail.com',
+            pass: 'Nammagaadi@123'
         },
         tls: {
             rejectUnauthorized: false
@@ -47,8 +47,8 @@ app.post("/sendMail", (req, res) => {
     })
 
     var mailOptions = {
-        from: email,
-        to: 'hg1532000@gmail.com',
+        from: "gaadinamma@gmail.com",
+        to: email,
         subject: 'NammaGaadi - Contact US : ',
         text: msg
     }

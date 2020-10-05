@@ -1,6 +1,5 @@
 const admin = require('firebase-admin');
 const serviceAccount = require('./serviceAccountKey.json');
-const { firestore } = require('firebase-admin');
 const fast2sms = require('fast-two-sms');
 //initialize admin SDK using serciceAcountKey
 admin.initializeApp({

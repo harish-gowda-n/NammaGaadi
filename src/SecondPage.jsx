@@ -78,6 +78,8 @@ export default function SecondPage(homeprops) {
       case "inp_otp": setState(prevState => { return { ...prevState, inp_otp: value } }); break;
 
       case "checked": setState(prevState => { return { ...prevState, checked: !state.checked } }); break;
+
+      default : break;
     }
   }
 
@@ -96,7 +98,7 @@ export default function SecondPage(homeprops) {
         setKey("contactDetails"); break;
 
       case "gen_otp":
-        if (state.phone.length == 10)
+        if (state.phone.length === 10)
           generateOTP(state.phone, gen_otp);
         else
           alert("Please eneter a valid phone number")
@@ -132,12 +134,13 @@ export default function SecondPage(homeprops) {
           ? alert("Please agree to the terms and conditions!")
           : displayRazorpay(db_data, calculations(distance, state.vehicle), homeprops)
         break;
+
+      default: break;
     }
   }
 
   return (
     <div className="mainDiv" style={{
-      margin: "2rem 0 auto 0",
       margin: "2rem auto 0 auto"
     }}>
       <div style={{ margin: "auto auto" }}>
@@ -247,10 +250,10 @@ export default function SecondPage(homeprops) {
               <td><h6>{props.vehicle === "" ? "Not Entered" : props.vehicle}</h6></td></tr>
 
             <tr><td><h6>Pickup Location : </h6></td>
-              <td><h6>{pickupCity === '' ? "Not Entered" : pickupCity}</h6></td></tr>
+              <td><h6>{pickupCity === '' ? "Not Entered" : pickupCity || pickupArea}</h6></td></tr>
 
             <tr><td><h6>Drop Location :</h6></td>
-              <td><h6>{dropCity === '' ? "Not Entered" : dropCity}</h6></td></tr>
+              <td><h6>{dropCity === '' ? "Not Entered" : dropCity || dropArea}</h6></td></tr>
 
             <tr><td><h6>Estimated fare :</h6></td>
               <td><h6>{state.vehicle.length > 0  
