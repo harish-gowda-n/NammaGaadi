@@ -11,7 +11,6 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
-<<<<<<< HEAD
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.0",
     "dotenv": "^8.2.0",
@@ -23,12 +22,6 @@
     "nodemon": "^2.0.4",
     "path": "^0.12.7",
     "razorpay": "^2.0.6",
-=======
-    "bootstrap": "^4.5.0",
-    "express": "^4.17.1",
-    "node-fetch": "^2.6.0",
-    "path": "^0.12.7",
->>>>>>> 0043c2635bbaf8b2a7826539cc9492064447d222
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",

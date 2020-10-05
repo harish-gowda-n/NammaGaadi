@@ -7,11 +7,7 @@ let features = [{
 },
 {
   "key": 2,
-<<<<<<< HEAD
   "featHead": "Quick & Easy",
-=======
-  "featHead": "Quick & Easy Portal",
->>>>>>> 0043c2635bbaf8b2a7826539cc9492064447d222
   "featDesc": "Hiring a truck is now just a click away, through our hassle free online booking system."
 },
 {
