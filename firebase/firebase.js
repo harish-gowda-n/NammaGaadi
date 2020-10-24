@@ -22,15 +22,16 @@ module.exports.write = function (data, res) {
     orderStatus: 1,
     pickUpLocation: new firestore.GeoPoint(data.pickupPoint.pickupLat, data.pickupPoint.pickupLong),
     pickUpLocationText: data.pickupCity,
-    transactionAmount: data.price,
-    transactionID: data.payment_id,
+    transactionAmount: '0',
+    transactionID: '0',
     vehicleCapacity: 1000,
     vehicleType: data.vehicleType
   }).then(() => {
     res.json({ status: 'ok' })
     fast2sms.sendMessage({
       authorization: process.env.REACT_APP_Fast2SMS,
-      message: `Dear Customer, your order has been registered successfully. Please note down your transaction id for reference ${data.payment_id} Feel free to contact us at +912020202020 Thanks for choosing us!!`,
+      // message: `Dear Customer, your order has been registered successfully. Please note down your transaction id for reference ${data.payment_id} Feel free to contact us at +912020202020 Thanks for choosing us!!`,
+      message: `Dear Customer, your booking of ${data.vehicleType} has been placed successfully! Our team will contact you shorlty. Feel free to contact us at +918792600639 if you have any quesries`,
       numbers: [data.phone],
     });
   })
@@ -38,3 +39,6 @@ module.exports.write = function (data, res) {
     alert("OOPS something went wrong!! If your money was deducted, our team will contact you shortly.\n Please co-operate, Thanks!!")
   });
 }
+
+// transactionAmount: data.price,
+//     transactionID: data.payment_id,

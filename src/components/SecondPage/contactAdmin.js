@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-export default (orderDet, props) => {
-
+export default (orderDet, props, setLoadingSuccess) => {
+    setLoadingSuccess(true)
     axios({
         method: "POST",
         url: "/firebase",
@@ -12,6 +12,8 @@ export default (orderDet, props) => {
       if (res.status === 200){
         notifyAdmin(orderDet, props)
       }
+    }).finally(() => {
+        setLoadingSuccess(false)
     })
 }
 
@@ -22,8 +24,8 @@ function notifyAdmin(orderDet, props){
         data: {
             cName: orderDet.name,
             cPhNo: orderDet.phone,
-            pL: orderDet.pickupCity,
-            dL: orderDet.dropCity,
+            pL: orderDet.pickupArea||orderDet.pickupCity,
+            dL: orderDet.dropArea || orderDet.dropCity,
             vehicle: orderDet.vehicleType,
             distance: orderDet.distance,
             price: orderDet.price,
