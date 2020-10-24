@@ -11,7 +11,7 @@ export default () => {
         margin: "0 auto 0 auto",
       }}
     >
-      <h1 style={{ marginTop: 80, marginBottom: 25 }}>Payment successful!!</h1>
+      <h1 style={{ marginTop: 80, marginBottom: 25 }}>Booking Confirmed!!</h1>
       <h5>{"Thanks for doing business with us!!🙂"}</h5>
       <h5 style={{ marginBottom: 50 }}>
         {

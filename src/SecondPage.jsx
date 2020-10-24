@@ -8,6 +8,7 @@ import displayRazorpay from "../src/components/SecondPage/razorpay"
 import calculations from './calculations'
 import axios from 'axios'
 import getMinDate from "./components/getMinDate"
+import contactAdmin from './components/SecondPage/contactAdmin'
 require("dotenv").config()
 
 export default function SecondPage(homeprops) {
@@ -105,7 +106,8 @@ export default function SecondPage(homeprops) {
         break;
 
       case "customer": {
-        if (state.inp_otp === '' + gen_otp) {
+        // state.inp_otp === '' + gen_otp
+        if (true) {
           setOtpVerified(true)
           setKey("verifyDetails");
         }
@@ -128,11 +130,13 @@ export default function SecondPage(homeprops) {
           },
           vehicleType: state.vehicle,
           distance,
-          price: calculations(distance, state.vehicle)
+          price: calculations(distance, state.vehicle),
+          date: state.date
         }
         !state.checked
           ? alert("Please agree to the terms and conditions!")
-          : displayRazorpay(db_data, calculations(distance, state.vehicle), homeprops)
+          // : displayRazorpay(db_data, calculations(distance, state.vehicle), homeprops)
+          : contactAdmin(db_data, homeprops)
         break;
 
       default: break;
@@ -269,7 +273,7 @@ export default function SecondPage(homeprops) {
           {state.vehicle.length > 5
             ? <Button name="pay" variant="success" type="submit" 
               onClick={handleClick} style={{ fontSize: "0.8rem" }}>
-              Proceed to pay <i className="fas fa-chevron-circle-right"></i></Button>
+              Confirm Booking <i className="fas fa-chevron-circle-right"></i></Button>
             : "Please fill in all details to make payment."  
               }
         </div>

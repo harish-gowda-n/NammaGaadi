@@ -1,7 +1,8 @@
 const admin = require('firebase-admin');
 const serviceAccount = require('./serviceAccountKey.json');
 const fast2sms = require('fast-two-sms');
-//initialize admin SDK using serciceAcountKey
+const { firestore } = require('firebase-admin');
+//initialize admin SDK using serviceAcountKey
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
@@ -17,7 +18,7 @@ module.exports.write = function (data, res) {
     driverStatus: 0,
     dropLocationText: data.dropCity,
     dropPoint: new firestore.GeoPoint(data.dropPoint.dropLat, data.dropPoint.dropLong),
-    orderPlacedTime: (new firestore.Timestamp(Math.floor(Date.now() / 1000), 0)),
+    orderPlacedTime: new firestore.Timestamp(Math.floor(Date.now() / 1000), 0),
     orderStatus: 1,
     pickUpLocation: new firestore.GeoPoint(data.pickupPoint.pickupLat, data.pickupPoint.pickupLong),
     pickUpLocationText: data.pickupCity,

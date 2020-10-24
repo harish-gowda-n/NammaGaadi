@@ -135,6 +135,16 @@ app.get('/paymentsuccess', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
+app.post('/contactadmin', async (req, res) => {
+    console.log("reached")
+    const response = await fast2sms.sendMessage({
+      authorization: process.env.REACT_APP_Fast2SMS,
+      message: `New Order : \n Customer Name : ${req.body.cname}\n Custome Ph No : ${req.body.cphno}\n Pickup Location : ${req.body.pL}\n Delivery Location : ${req.body.dL}\n Date : ${req.body.date}\n price : ${req.body.price}`,
+      numbers: [8618755812],
+    });
+    res.send(response);
+  });
+
 // PORT CONFIG
 app.listen(process.env.PORT || 3001, () => {
     console.log("Server listening on port 3001");
