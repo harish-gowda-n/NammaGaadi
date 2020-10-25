@@ -7,6 +7,7 @@ import HomePage from "./HomePage"
 import SecondPage from "./SecondPage"
 import SuccessPage from "./SuccessPage"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Agreement from "./Agreement";
 
 export default function App() {
 
@@ -18,6 +19,7 @@ export default function App() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/order" component={SecondPage} />
           <Route exact path="/paymentsuccess" component={SuccessPage} />
+          <Route exact path="/agreement" component={Agreement} />
         </Switch>
         </Router>
       <Footer />
