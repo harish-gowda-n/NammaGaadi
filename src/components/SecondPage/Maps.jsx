@@ -8,7 +8,7 @@ import {
 import Geocode from "react-geocode";
 import AutoComplete from "react-google-autocomplete";
 require('dotenv').config();
-Geocode.setApiKey(process.env.REACT_APP_geocodeAPIKey);
+Geocode.setApiKey("AIzaSyDIATTz7w5lKJYfjR5XssI2-AsPxwgqxQw");
 
 var getDistanceBetweenPoints = require("get-distance-between-points");
 
