@@ -21,8 +21,16 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build')));
 
 //Home Page
-app.get("/*", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
+
+app.get("/order", (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
+
+app.get("/agreement", (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
 // //Send Mail
