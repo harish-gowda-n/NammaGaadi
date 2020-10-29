@@ -1,6 +1,5 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-let play = require("./gplay.jpg");
 
 export default () => {
   return (
@@ -40,9 +39,9 @@ export default () => {
           target="_blank"
         >
           <i className="fab fa-google-play"></i> Click here to get the the
-          Driver App.
+          Driver App
           <br />
-          <img src={play} alt="Google Playstore" />
+          <img style={{width: '300px', height: '100px'}} alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/>
         </a>
       </p>
       <p className="copyrights">

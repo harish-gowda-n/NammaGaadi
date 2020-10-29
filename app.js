@@ -11,7 +11,7 @@ require('dotenv').config()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json()); 
-var nodemailer = require("nodemailer");
+// var nodemailer = require("nodemailer");
 
 // const razorpay = new Razorpay({
 // 	key_id: process.env.REACT_APP_RazorPayKeyID,
@@ -25,42 +25,42 @@ app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
-//Send Mail
-app.post("/sendMail", (req, res) => {
-    const email = req.body.email
-    const msg = req.body.msg
+// //Send Mail
+// app.post("/sendMail", (req, res) => {
+//     const email = req.body.email
+//     const msg = req.body.msg
     
-    var transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'gaadinamma@gmail.com',
-            pass: 'Nammagaadi@123'
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-    })
+//     var transporter = nodemailer.createTransport({
+//         service: 'gmail',
+//         auth: {
+//             user: 'gaadinamma@gmail.com',
+//             pass: 'Nammagaadi@123'
+//         },
+//         tls: {
+//             rejectUnauthorized: false
+//         }
+//     })
 
-    var mailOptions = {
-        from: "gaadinamma@gmail.com",
-        to: email,
-        subject: 'NammaGaadi - Contact US : ',
-        text: msg
-    }
+//     var mailOptions = {
+//         from: "gaadinamma@gmail.com",
+//         to: email,
+//         subject: 'NammaGaadi - Contact US : ',
+//         text: msg
+//     }
 
-    transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-            console.log(error);
-            res.json({
-                msg: 'fail'
-              })
-        } else {
-            res.json({
-                msg: 'success'
-              })
-        }
-      });
-})
+//     transporter.sendMail(mailOptions, function(error, info){
+//         if (error) {
+//             console.log(error);
+//             res.json({
+//                 msg: 'fail'
+//               })
+//         } else {
+//             res.json({
+//                 msg: 'success'
+//               })
+//         }
+//       });
+// })
 
 //Send OTP
 app.post('/sendotp', async (req, res) => {
