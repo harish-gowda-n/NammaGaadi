@@ -12,10 +12,10 @@ function VehicleInfo(props) {
           <Table size="sm" style={{ margin: "auto" }}>
             <tbody>
               <tr><td>Capacity</td><td>{props.capacity}</td></tr>
-              <tr><td>Base price</td><td>{props.price}*</td></tr>
+              <tr><td>Starts from</td><td>{props.price}*</td></tr>
             </tbody>
           </Table>
-          <p style={{ fontSize: '12px', marginTop: '5px' }}>*Base price includes 1 km and 60 minutes of waiting time</p>
+          <p style={{ fontSize: '12px', marginTop: '5px' }}>*Base price covers a minimum distance. Please contact us for accurate rates.</p>
           <Link to={{
             pathname: '/order',
             linkState: { vehicleType: props.name }

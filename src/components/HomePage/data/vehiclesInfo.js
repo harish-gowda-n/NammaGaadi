@@ -4,21 +4,21 @@ const vehiclesInfo = [
     img: require("./images/ape.png"),
     name: "Ape Piaggio",
     capacity: "500 kg",
-    price: "₹ 125"
+    price: "₹ 300"
   },
   {
     key: 2,
     img: require("./images/ace.png"),
     name: "Tata Ace",
     capacity: "750 kg",
-    price: "₹ 180"
+    price: "₹ 1200"
   },
   {
     key: 3,
     img: require("./images/407.png"),
     name: "Tata 407",
     capacity: "2500 kg",
-    price: "₹ 280"
+    price: "₹ 1400"
   },
   {
     key: 4,

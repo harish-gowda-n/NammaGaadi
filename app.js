@@ -21,12 +21,7 @@ var nodemailer = require("nodemailer");
 app.use(express.static(path.join(__dirname, 'build')));
 
 //Home Page
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-})
-
-//Second Page
-app.get("/order", (req, res) => {
+app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
@@ -129,10 +124,6 @@ app.post('/sendotp', async (req, res) => {
 app.post('/firebase', async (req, res) => {
     const db_data = req.body.db_data
     firebase.write(db_data, res);    
-})
-
-app.get('/paymentsuccess', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
 app.post('/contactadmin', async (req, res) => {

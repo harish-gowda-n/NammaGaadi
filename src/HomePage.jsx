@@ -17,7 +17,7 @@ export default function HomePage(){
       <hr id="aboutUs"/>
       <AboutUs />
       <hr />
-      <ContactUs id="contactUs"/>
+      {/* <ContactUs id="contactUs"/> */}
     </div>
     )
 }
