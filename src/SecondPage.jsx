@@ -512,7 +512,7 @@ export default function SecondPage(homeprops) {
             "Please fill in all details to make payment."
           )}
         </div>
-        <div style={{textAlign: 'center'}}>For any queries regarding the prices please contact us at +918792600639</div>
+        <div style={{textAlign: 'center', marginTop: 10}}>For any queries regarding the prices please contact us at +918792600639</div>
       </div>
     );
   }
