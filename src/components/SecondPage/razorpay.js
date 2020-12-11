@@ -28,7 +28,7 @@ export default async ( db_data, price, props ) => {
     } })
   
       const options = {
-        key: 'rzp_test_L1pHR7BSFCwGjk',
+        key: process.env.REACT_APP_RazorPayKeyID,
         currency: b_data.data.currency,
         amount: b_data.data.amount,
         order_id: b_data.data.id,

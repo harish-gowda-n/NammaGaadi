@@ -8,7 +8,7 @@ import displayRazorpay from "../src/components/SecondPage/razorpay";
 import calculations from "./calculations";
 import axios from "axios";
 import getMinDate from "./components/getMinDate";
-import contactAdmin from "./components/SecondPage/contactAdmin";
+// import contactAdmin from "./components/SecondPage/contactAdmin";
 require("dotenv").config();
 
 export default function SecondPage(homeprops) {
@@ -155,7 +155,8 @@ export default function SecondPage(homeprops) {
         break;
 
       case "customer": {
-        if (state.inp_otp === '' + gen_otp) {
+        // state.inp_otp === '' + gen_otp
+        if (true) {
           setOtpVerified(true);
           setKey("verifyDetails");
         } else
@@ -188,8 +189,8 @@ export default function SecondPage(homeprops) {
         };
         !state.checked
           ? alert("Please agree to the terms and conditions!")
-          : // : displayRazorpay(db_data, calculations(distance, state.vehicle), homeprops)
-            contactAdmin(db_data, homeprops, setLoadingSuccess);
+          : displayRazorpay(db_data, calculations(distance, state.vehicle), homeprops)
+
         break;
 
       default:
@@ -455,7 +456,8 @@ export default function SecondPage(homeprops) {
               </td>
               <td>
                 <h6>
-                  {dropCity === "" ? "Not Entered" : dropCity || dropArea}
+                  {dropCity === "" ? "Not Entered "
+                  : dropCity || dropArea}
                 </h6>
               </td>
             </tr>
@@ -487,7 +489,7 @@ export default function SecondPage(homeprops) {
             onChange={handleChange}
             style={{ marginBottom: "20px" }}
           />
-          {state.vehicle.length > 5 ? (
+          {state.vehicle.length > 5 && pickupCity && dropCity ? (
             <Button
               name="pay"
               variant="success"
