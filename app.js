@@ -33,43 +33,6 @@ app.get("/agreement", (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
-// //Send Mail
-// app.post("/sendMail", (req, res) => {
-//     const email = req.body.email
-//     const msg = req.body.msg
-    
-//     var transporter = nodemailer.createTransport({
-//         service: 'gmail',
-//         auth: {
-//             user: 'gaadinamma@gmail.com',
-//             pass: 'Nammagaadi@123'
-//         },
-//         tls: {
-//             rejectUnauthorized: false
-//         }
-//     })
-
-//     var mailOptions = {
-//         from: "gaadinamma@gmail.com",
-//         to: email,
-//         subject: 'NammaGaadi - Contact US : ',
-//         text: msg
-//     }
-
-//     transporter.sendMail(mailOptions, function(error, info){
-//         if (error) {
-//             console.log(error);
-//             res.json({
-//                 msg: 'fail'
-//               })
-//         } else {
-//             res.json({
-//                 msg: 'success'
-//               })
-//         }
-//       });
-// })
-
 //Send OTP
 app.post('/sendotp', async (req, res) => {
     const response = await fast2sms.sendMessage({
@@ -135,16 +98,6 @@ app.post('/firebase', async (req, res) => {
     const db_data = req.body.db_data
     firebase.write(db_data, res);    
 })
-
-// app.post('/contactadmin', async (req, res) => {
-//     console.log("reached")
-//     const response = await fast2sms.sendMessage({
-//       authorization: process.env.REACT_APP_Fast2SMS,
-//       message: `New Order summary: \n Customer Name : ${req.body.cName}\n Customer Ph No : ${req.body.cPhNo}\n Vehicle : ${req.body.vehicle}\n Pickup Location : ${req.body.pL}\n Delivery Location : ${req.body.dL}\n Date : ${req.body.date}\n price : ${req.body.price}`,
-//       numbers: [8792600639],
-//     });
-//     res.send(response);
-//   });
 
 // PORT CONFIG
 app.listen(process.env.PORT || 3001, () => {
