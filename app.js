@@ -7,6 +7,7 @@ const Razorpay = require('razorpay')
 const shortid = require('shortid')
 const firebase = require('./firebase/firebase')
 require('dotenv').config()
+//testing
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
