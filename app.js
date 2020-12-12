@@ -11,7 +11,6 @@ require('dotenv').config()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json()); 
-// var nodemailer = require("nodemailer");
 
 const razorpay = new Razorpay({
 	key_id: process.env.REACT_APP_RazorPayKeyID,
